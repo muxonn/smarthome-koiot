@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:smarthome_koiot/presentation/home_page.dart';
+import 'package:smarthome_koiot/presentation/pages/login_page.dart';
+import 'package:smarthome_koiot/presentation/utils/theme.dart';
 
 void main() {
   runApp(const MyApp());
@@ -12,10 +13,8 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-        useMaterial3: true,
-      ),
-      home: const HomePage(),
+      theme: SHAppTheme.lightTheme,
+      home: const LoginPage(),
     );
   }
 }
