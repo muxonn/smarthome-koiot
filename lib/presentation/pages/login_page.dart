@@ -8,6 +8,7 @@ class LoginPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       body: Stack(
         children: [
           Positioned(
@@ -42,12 +43,14 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 30),
                 Wrap(
                   runSpacing: 20,
+                  //TODO: Add forms logic
                   children: [
                     TextFormField(
                       decoration: const InputDecoration(hintText: "Email"),
                     ),
                     TextFormField(
                       decoration: const InputDecoration(hintText: "Password"),
+                      obscureText: true,
                     ),
                   ],
                 ),
@@ -66,6 +69,7 @@ class LoginPage extends StatelessWidget {
                 const SizedBox(height: 60),
                 SizedBox(
                   width: double.infinity,
+                  //TODO: Add login logic
                   child: ElevatedButton(
                     onPressed: () {},
                     child: const Text(
@@ -86,6 +90,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.center,
+                  //TODO: Add signup logic
                   child: TextButton(
                     style: TextButton.styleFrom(
                         splashFactory: NoSplash.splashFactory),
@@ -96,7 +101,8 @@ class LoginPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                Spacer(),
+                const Spacer(),
+                //TODO: Add project info logic
                 TextButton.icon(
                   onPressed: () {},
                   icon: Icon(Icons.info, color: SHColors.orange, size: 18),
