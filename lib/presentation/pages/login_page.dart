@@ -18,28 +18,19 @@ class LoginPage extends StatelessWidget {
               children: [
                 Text(
                   "Welcome home,",
-                  style: TextStyle(
-                      fontSize: 36,
-                      color: Theme.of(context).colorScheme.primary),
+                  style: Theme.of(context).textTheme.headlineLarge,
                 ),
                 Text(
                   "Smarthome",
-                  style: TextStyle(fontSize: 36, fontWeight: FontWeight.bold),
+                  style: Theme.of(context)
+                      .textTheme
+                      .headlineLarge!
+                      .copyWith(fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             TextFormField(
-              decoration: const InputDecoration(
-                hintText: "Email",
-                focusColor: Colors.red,
-                enabledBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.grey),
-                ),
-                focusedBorder: UnderlineInputBorder(
-                  borderSide: BorderSide(color: Colors.black),
-                ),
-              ),
-              cursorColor: Colors.black,
+              decoration: const InputDecoration(hintText: "Email"),
             ),
           ],
         ),
