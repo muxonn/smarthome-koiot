@@ -16,7 +16,7 @@ class LoginPage extends StatelessWidget {
             right: 0,
             child: SvgPicture.asset(
               'assets/img/koiot-rotated.svg',
-              width: 240,
+              width: 220,
             ),
           ),
           Padding(
@@ -42,7 +42,7 @@ class LoginPage extends StatelessWidget {
                 ),
                 const SizedBox(height: 30),
                 Wrap(
-                  runSpacing: 20,
+                  runSpacing: 10,
                   //TODO: Add forms logic
                   children: [
                     TextFormField(
@@ -90,11 +90,13 @@ class LoginPage extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  //TODO: Add signup logic
+                  //TODO: Add login logic
                   child: TextButton(
                     style: TextButton.styleFrom(
                         splashFactory: NoSplash.splashFactory),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/signup-page');
+                    },
                     child: Text(
                       "Sign Up",
                       style: Theme.of(context).textTheme.labelSmall,

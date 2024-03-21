@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: SHAppTheme.lightTheme,
-      home: LoginPage(),
+      home: const LoginPage(),
       routes: SHRoutes.routes,
     );
   }

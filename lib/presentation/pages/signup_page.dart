@@ -16,7 +16,7 @@ class SignupPage extends StatelessWidget {
             right: 0,
             child: SvgPicture.asset(
               'assets/img/koiot-rotated.svg',
-              width: 240,
+              width: 220,
             ),
           ),
           Padding(
@@ -29,27 +29,40 @@ class SignupPage extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  "Welcome home,",
-                  style: Theme.of(context).textTheme.headlineLarge,
-                ),
-                Text(
-                  "Smarthome",
-                  style: Theme.of(context)
-                      .textTheme
-                      .headlineLarge!
-                      .copyWith(fontWeight: FontWeight.bold),
+                Row(
+                  children: [
+                    Text(
+                      "Hi,",
+                      style: Theme.of(context).textTheme.headlineLarge,
+                    ),
+                    SizedBox(width: 10),
+                    Text(
+                      "Welcome!",
+                      style: Theme.of(context)
+                          .textTheme
+                          .headlineLarge!
+                          .copyWith(fontWeight: FontWeight.bold),
+                    ),
+                  ],
                 ),
                 const SizedBox(height: 30),
                 Wrap(
-                  runSpacing: 20,
+                  runSpacing: 10,
                   //TODO: Add forms logic
                   children: [
+                    TextFormField(
+                      decoration: const InputDecoration(hintText: "Name"),
+                    ),
                     TextFormField(
                       decoration: const InputDecoration(hintText: "Email"),
                     ),
                     TextFormField(
                       decoration: const InputDecoration(hintText: "Password"),
+                      obscureText: true,
+                    ),
+                    TextFormField(
+                      decoration:
+                          const InputDecoration(hintText: "Confirm password"),
                       obscureText: true,
                     ),
                   ],
@@ -66,7 +79,7 @@ class SignupPage extends StatelessWidget {
                     ),
                   ),
                 ),
-                const SizedBox(height: 60),
+                const SizedBox(height: 30),
                 SizedBox(
                   width: double.infinity,
                   //TODO: Add signup logic
@@ -82,7 +95,7 @@ class SignupPage extends StatelessWidget {
                 Container(
                   alignment: Alignment.center,
                   child: Text(
-                    "Don't have an account?",
+                    "Already have an account?",
                     style: Theme.of(context).textTheme.labelSmall!.copyWith(
                           color: SHColors.lightGrey,
                         ),
@@ -90,13 +103,14 @@ class SignupPage extends StatelessWidget {
                 ),
                 Container(
                   alignment: Alignment.center,
-                  //TODO: Add signup logic
                   child: TextButton(
                     style: TextButton.styleFrom(
                         splashFactory: NoSplash.splashFactory),
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/login-page');
+                    },
                     child: Text(
-                      "Sign Up",
+                      "Log In",
                       style: Theme.of(context).textTheme.labelSmall,
                     ),
                   ),
