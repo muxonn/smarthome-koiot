@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:smarthome_koiot/presentation/pages/home_page.dart';
 import 'package:smarthome_koiot/presentation/pages/login_page.dart';
 import 'package:smarthome_koiot/presentation/utils/routes.dart';
 import 'package:smarthome_koiot/presentation/utils/theme.dart';
@@ -15,7 +16,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       theme: SHAppTheme.lightTheme,
-      home: const LoginPage(),
+      home: const HomePage(),
       routes: SHRoutes.routes,
     );
   }
