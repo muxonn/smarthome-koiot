@@ -68,7 +68,7 @@ class HomePageWidget extends HookWidget {
             mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Text(
-                deviceNum > 1 ? "${deviceNum} devices" : "${deviceNum} device",
+                deviceNum > 1 ? "$deviceNum devices" : "$deviceNum device",
                 style: TextStyle(
                   color: SHColors.darkGrey,
                 ),
@@ -85,12 +85,19 @@ class HomePageWidget extends HookWidget {
                   fontWeight: FontWeight.bold,
                 ),
               ),
-              Switch(
-                value: isOn.value,
-                onChanged: toggleSwitch,
-                activeColor: SHColors.white,
-                inactiveThumbColor: SHColors.white,
-                inactiveTrackColor: SHColors.lightGrey,
+              Theme(
+                data: ThemeData(
+                  useMaterial3: true,
+                ).copyWith(
+                  colorScheme: Theme.of(context).colorScheme.copyWith(outline: SHColors.white),
+                ),
+                child: Switch(
+                  value: isOn.value,
+                  onChanged: toggleSwitch,
+                  activeColor: SHColors.white,
+                  inactiveThumbColor: SHColors.white,
+                  inactiveTrackColor: SHColors.lightGrey,
+                ),
               ),
             ],
           ),
